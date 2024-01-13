@@ -23,6 +23,7 @@
     "@internationalized/date": "^3.5.1",
     "bits-ui": "^0.14.0",
     "clsx": "^2.1.0",
+    "embla-carousel-autoplay": "^8.0.0-rc19",
     "embla-carousel-svelte": "^8.0.0-rc19",
     "formsnap": "^0.4.2",
     "lucide-svelte": "^0.309.0",
