@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    "prettier-plugin-svelte",
+    "prettier-plugin-tailwindcss"
+  ],
+  "overrides": [{
+    "files": "*.svelte",
+    "options": { "parser": "svelte" }
+  }],
+  "svelteStrictMode": true,
+  "semi": false,
+  "singleQuote": false,
+  "trailingComma": "none",
+  "printWidth": 90
+}

@@ -39,7 +39,6 @@
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
  
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -76,8 +75,13 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  *:focus {
+    @apply ring-0;
+  }
 }
 
+// TODO: remove nasty number controls
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -88,8 +92,4 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
-}
-
-*:focus {
-  outline: none;
 }

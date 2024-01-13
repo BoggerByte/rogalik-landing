@@ -1,18 +1,20 @@
 <script>
-    import {location} from "svelte-spa-router"
-    import {Button} from "@ui/button";
+  import { location } from "svelte-spa-router"
+  import { Button } from "@ui/button"
 
-    export let to
-    export let plain = false
+  export let to
+  export let plain = false
 
-    $: active = $location === to
+  $: active = $location === to
 </script>
 
 <Button
-        on:click
-        variant="link"
-        href="#{to}"
-        class="hover:no-underline hover:text-primary {!plain && !active ? 'text-muted-foreground' : ''} {$$props.class}"
+  on:click
+  variant="link"
+  href="#{to}"
+  class="hover:text-primary hover:no-underline {!plain && !active
+    ? 'text-muted-foreground'
+    : ''} {$$props.class}"
 >
-    <slot {active} />
+  <slot {active} />
 </Button>
