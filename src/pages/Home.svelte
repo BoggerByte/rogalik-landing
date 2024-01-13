@@ -3,23 +3,47 @@
     import {push} from "svelte-spa-router"
     import {Button} from "@ui/button"
     import {Separator} from "@ui/separator"
-    import {Carousel} from "@ui/carousel";
+    import * as Carousel from "@ui/carousel";
     import ProductCard from "@/lib/components/ProductCard.svelte"
     import Location from "@/lib/components/Location.svelte";
     import breads from "@/assets/breads.json"
     import breadsImages from "@/assets/breads-images.json"
+    import Autoplay from "embla-carousel-autoplay";
 
     const viewableBreads = breads.slice(0, 6)
 </script>
 
-<section class="min-h-[55vh] max-w-7xl flex items-center justify-center text-center md:justify-start md:text-left">
-    <div class="p-4">
+<section class="min-h-[55vh] max-w-7xl flex flex-col items-center justify-center text-center lg:justify-start lg:text-left lg:flex-row">
+    <div class="basis-1/2 flex-grow p-4">
         <h1 class="text-5xl font-fatface leading-tight">Delectable snacks <br> by Proficient Workers</h1>
-        <p class="text-2xl text-muted-foreground mb-3">Don't believe us? Close the website</p>
-        <Button size="lg" on:click={() => push('/store')}>
-            <span class="font-bold mr-2">View Our Range</span>
-            <ArrowRight/>
-        </Button>
+        <p class="text-2xl text-muted-foreground">Don't believe us? Close the website</p>
+        <ul class="flex flex-wrap gap-x-4 justify-center text-muted-foreground md:justify-start">
+            <li>Bread</li>
+            <li>Pastries</li>
+            <li>Cakes</li>
+            <li>Cookies</li>
+            <li>Pies</li>
+        </ul>
+        <div class="my-3">
+            <Button size="lg" on:click={() => push('/store')}>
+                <span class="font-bold mr-2">View Our Range</span>
+                <ArrowRight/>
+            </Button>
+        </div>
+    </div>
+    <div class="flex-grow basis-1/2">
+        <Carousel.Root opts={{ loop: true }} plugins={[Autoplay({delay: 3000})]} class="mx-10">
+            <Carousel.Content class="items-center">
+                {#each breadsImages as url, i}
+                    <Carousel.Item>
+                        <img src={url} class="block rounded-md object-cover" alt="bread image {i + 1}">
+                        <div class="text-muted-foreground">inst: @rogalik.bakery</div>
+                    </Carousel.Item>
+                {/each}
+            </Carousel.Content>
+            <Carousel.Previous />
+            <Carousel.Next />
+        </Carousel.Root>
     </div>
 </section>
 
