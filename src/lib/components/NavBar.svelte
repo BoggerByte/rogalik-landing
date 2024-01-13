@@ -7,7 +7,6 @@
     import Link from "$lib/components/Link.svelte";
     import {Badge} from "@ui/badge";
     import {slide} from "svelte/transition";
-    import {toast} from "svelte-sonner";
 
     $: mobileMode = useMediaQuery('(max-width: 820px)')
 
@@ -22,18 +21,18 @@
         {#if !$mobileMode}
             <div class="flex items-center gap-1 py-1">
                 <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-                <Link to="/store">Store</Link>
                 <Link to="/new-order">New Order</Link>
+                <Link to="/store">Store</Link>
                 <Link to="/discount" class="space-x-2">
                     <span>Discount</span>
                     <Badge variant="outline" class="border-red-400 text-red-400 bg-red-400 bg-opacity-15">new</Badge>
                 </Link>
+                <Link to="/about">About</Link>
             </div>
         {/if}
         <div class="flex items-center gap-1 py-1 ml-auto">
-            <Button variant="ghost" size="icon" on:click={() => toast.info('Not implemented yet')}><ShoppingCart /></Button>
-            <Button variant="ghost" size="icon" href="https://github.com/BoggerByte/RogalikLanding"><Github /></Button>
+            <Button variant="ghost" size="icon" disabled><ShoppingCart /></Button>
+            <Button variant="ghost" size="icon" href="https://github.com/BoggerByte/RogalikLanding" target="_blank"><Github /></Button>
             <Button variant="ghost" size="icon" on:click={toggleMode} class="relative flex-none">
                 {#if $mode === "light"}
                 <span transition:slide={{duration: 300}} class="absolute">
