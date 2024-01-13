@@ -50,19 +50,14 @@
             name: "bakery9",
             imageUrl: "https://img.buzzfeed.com/buzzfeed-static/static/2014-06/30/18/enhanced/webdr08/original-18867-1404166118-21.jpg?downsize=600:*&output-format=auto&output-quality=auto",
             location: "Hong kong",
-        },
-        {
-            name: "bakery10",
-            imageUrl: "https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_1024/https://www.lovehappensmag.com/blog/wp-content/uploads/2021/09/Laudree-1024x673.jpg",
-            location: "Nice",
-        },
+        }
     ]
 
 </script>
 
-<div class="flex gap-16">
-    <img src="https://www.magnoliabakery.com/cdn/shop/files/custom_resized_5ca7d053-1f66-455b-a77d-4115d570cf4f_1280x.jpg?v=1632848075" alt="our_bakery">
-    <div>
+<section class="flex flex-wrap gap-10">
+    <img class="rounded-md object-cover block w-[60%] flex-grow" src="https://www.magnoliabakery.com/cdn/shop/files/custom_resized_5ca7d053-1f66-455b-a77d-4115d570cf4f_1280x.jpg?v=1632848075" alt="our_bakery">
+    <div class="basis-1/3 flex-grow">
         <h2 class="text-3xl font-fatface mb-4">
             Where it all started
         </h2>
@@ -71,10 +66,12 @@
             Established in 1952 by our most passionate bakers, Rogalik Bakery has become a beloved institution, weaving a rich tapestry of flavors that have delighted generations.
         </p>
     </div>
-</div>
+</section>
+
 <Separator class="my-10" />
-<div class="flex gap-16">
-    <div>
+
+<section class="flex flex-wrap gap-10">
+    <div class="basis-1/3 flex-grow">
         <h2 class="text-3xl font-fatface mb-4">
             Our team
         </h2>
@@ -83,45 +80,37 @@
             Each chef brings their unique flair to the kitchen, combining traditional techniques with modern creativity.
             Their dedication to quality and innovation is evident in every bite of the delightful pastries offered at Rogalik Bakery.
         </p>
-        <h3 class="text-3xl font-fatface text-center mb-4">
-            Intrested in working with us? You can apply down below:
+        <h3 class="text-3xl font-fatface mb-4 mt-8">
+            Interested in working with us?
         </h3>
-        <Button class ="flex mx-auto"size="lg">
+        <Button size="lg">
             <span class="font-bold mr-2">Join our workforce</span>
             <ArrowRight />
         </Button>
     </div>
-    <img src="http://klublady.ru/uploads/posts/2022-02/1644689492_14-klublady-ru-p-konditerskii-shokolad-foto-16.jpg" alt="baker">
-</div>
+    <img class="rounded-md object-cover block w-[60%] flex-grow -scale-x-100" src="http://klublady.ru/uploads/posts/2022-02/1644689492_14-klublady-ru-p-konditerskii-shokolad-foto-16.jpg" alt="baker">
+</section>
 
 <Separator class="my-10" />
 
-<div>
-    <h2 class="font-fatface text-5xl text-center mb-8">Our locations around the world</h2>
-    <p>
+<section>
+    <h3 class="font-fatface text-3xl mb-4">Our locations around the world</h3>
+    <p class="">
         Rogalik Bakery's delectable creations have transcended borders, captivating taste buds across the globe.
         What began as a quaint establishment in a charming town has now evolved into a worldwide phenomenon with Rogalik Bakery branches gracing cities on every continent.
         Each bakery, whether nestled in the bustling streets of New York, the historic avenues of Paris, or the vibrant markets of Tokyo, carries the same commitment to quality and passion for baking that defined the original establishment. 
     </p>
-</div>
 
-<div class="flex justify-center">
-    <Carousel.Root class="w-full max-w-xs">
-        <Carousel.Content>
+    <Carousel.Root class="w-full max-w-2xl mx-auto">
+        <Carousel.Content class="items-center">
             {#each locations as bakery}
-            <Carousel.Item>
-                <div>
-                    <Card.Root>
-                        <Card.Content class="flex aspect-square items-center justify-center p-6">
-                            <img src={bakery.imageUrl} alt={bakery.name} class="block w-full rounded">
-                            <span class="text-4xl font-semibold">{bakery.location}</span>
-                        </Card.Content>
-                    </Card.Root>
-                </div>
-            </Carousel.Item>
+                <Carousel.Item class="items-center">
+                    <div class="mb-2 text-center font-semibold text-xl">{bakery.location}</div>
+                    <img src={bakery.imageUrl} alt={bakery.name} class="block rounded-md object-cover w-full">
+                </Carousel.Item>
             {/each}
         </Carousel.Content>
         <Carousel.Previous />
         <Carousel.Next />
     </Carousel.Root>
-</div>
+</section>
