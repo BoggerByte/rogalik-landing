@@ -1,0 +1,88 @@
+[
+  {
+    "name": "Village Bread",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/le-village.jpg.webp",
+    "description": "The bread of the village chambelland is the natural recipe of our range. It is made of wholemeal rice and sorghum flours, filtered water, natural rice leaven, olive oil and salt. It is the perfect balance between a strong crust and a soft crumb with delicate aromas. To be mixed or spread as you"
+  },
+  {
+    "name": "5-grain bread",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/cinq-grains.jpg.webp",
+    "description": "Chambelland's best-selling 5-grain bread combines our signature recipe and a crust topped with sesame, sunflower, poppy and brown and toasted flax seeds. On top of its excellent nutritional qualities, this bread brings a little touch of fantasy to the table."
+  },
+  {
+    "name": "athletes' bread",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/athlete.jpg.webp",
+    "description": "chambelland Athletes' Bread contains hazelnuts, dried figs, dried apricots and raisins. A winning combination for a tasty, filling snack or to accompany a sweet and savoury dish. Perfect with a little, very soft and mild goat's cheese."
+  },
+  {
+    "name": "chambellines",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/chambellines.jpg.webp",
+    "description": "Chambellines are the small-sized version of the village bread, either plain or with a five-grain topping. Their slim format makes them easy to take away and eat anywhere, anytime, with coffee, a savoury dish or cheese. They are also the ideal option for a home-made sandwich."
+  },
+  {
+    "name": "Foccacia",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/foccacia.jpg.webp",
+    "description": "chambelland foccacia, with a rice flour base, come in plain, poppy seed, sesame seed, garnished with Kalamata black olives or pissaladièrestyle, and are every bit as good as their Italian equivalent. Light, melt-in-the-mouth and crunchy if toasted, they are perfect with pre-dinner drinks or as a hearty savoury starter."
+  },
+  {
+    "name": "Sugar breads",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/pains-de-sucre.jpg.webp",
+    "description": "Chambelland sugar breads, flavoured with orange-flower water, with or without preserved orange peel and chocolate chips, or alternatively with raisins and vanilla, are our idea of a delicious treat. Kneaded with rice flour, their taste is a mixture of warm brioche, canneléand bread pudding. Irresistible."
+  },
+  {
+    "name": "Cocoa bread",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/pain-cacao.jpg.webp",
+    "description": "Cocoa bread is a subtle combination of rice, buckwheat and a slightly bitter chocolate. The cocoa taste is pleasant without being strong, giving the bread the comforting character of cake. A perfect wake-up breakfast or energy-packed snack."
+  },
+  {
+    "name": "Sourdough Loaf",
+    "imageUrl": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/57618e37-2445-4835-b872-5af36ac5dcb0/Derivates/588f2b19-6a23-4643-a59e-8335def06f79.jpg",
+    "description": "A classic sourdough loaf with a golden crust and a tangy, chewy interior. Perfect for sandwiches or to accompany your favorite spreads."
+  },
+  {
+    "name": "Multigrain Baguette",
+    "imageUrl": "https://4.bp.blogspot.com/-M5lhx5HywIE/VKWqdihfj3I/AAAAAAAAS90/QfQf8uRoAnk/s1600/Baghete-cu-multicereale.jpg",
+    "description": "Our multigrain baguette is a delightful blend of hearty grains, offering a crunchy crust and a soft, flavorful center. Ideal for a wholesome snack or meal accompaniment."
+  },
+  {
+    "name": "Almond Croissant",
+    "imageUrl": "https://houseofnasheats.com/wp-content/uploads/2023/08/Easy-Almond-Croissants-1.jpg",
+    "description": "Indulge in the flaky layers of our almond croissant, generously filled with almond paste and topped with sliced almonds. A perfect treat for breakfast or anytime."
+  },
+  {
+    "name": "Fruit Danish",
+    "imageUrl": "https://www.rockrecipes.com/wp-content/uploads/2011/04/DSC3337-3.jpg",
+    "description": "Our fruit danish is a delightful pastry filled with a sweet fruit compote, nestled in a buttery and light pastry. A delicious choice for those with a sweet tooth."
+  },
+  {
+    "name": "Red Velvet Cake",
+    "imageUrl": "https://preppykitchen.com/wp-content/uploads/2022/07/Red-Velvet-Recipe-Card-1a-500x375.jpg",
+    "description": "Experience the rich and velvety texture of our red velvet cake. Layers of moist red cocoa cake are complemented by a luscious cream cheese frosting—a true celebration of flavor."
+  },
+  {
+    "name": "Chocolate Cupcakes",
+    "imageUrl": "https://handletheheat.com/wp-content/uploads/2021/02/chocolate-cupcakes-SQUARE.png",
+    "description": "Our chocolate cupcakes are a blissful combination of moist chocolate cake and decadent chocolate frosting. Perfectly portioned for a sweet treat on the go."
+  },
+  {
+    "name": "Classic Chocolate Chip Cookies",
+    "imageUrl": "https://thedashleyskitchen.com/wp-content/uploads/2020/12/Classic-Chocolate-Chip1-e1614994966310-720x720.jpg",
+    "description": "Savor the nostalgia with our classic chocolate chip cookies. Crispy on the outside, chewy on the inside, and loaded with generous chocolate chips."
+  },
+  {
+    "name": "Oatmeal Raisin Cookies",
+    "imageUrl": "https://www.browneyedbaker.com/wp-content/uploads/2009/12/chewy-oatmeal-raisin-cookies.jpg",
+    "description": "Our oatmeal raisin cookies are a wholesome delight, combining hearty oats, plump raisins, and a hint of cinnamon. A comforting treat for any time of day."
+  },
+  {
+    "name": "Apple Pie",
+    "imageUrl": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/112598/apple-pie.81aa4b244561915636ec1a97ea525968.jpg?ixlib=rails-3.0.2",
+    "description": "Indulge in the classic charm of our apple pie. Sweet and tart apple slices encased in a flaky crust, baked to golden perfection—a slice of home-baked heaven."
+  },
+  {
+    "name": "Spinach and Feta Quiche",
+    "imageUrl": "https://joyfilledeats.com/wp-content/uploads/2019/08/Spinach-Feta-Quiche-12.jpg",
+    "description": "Our spinach and feta quiche is a savory delight with a buttery crust, filled with a flavorful combination of spinach, feta cheese, and savory seasonings. A savory option for any meal."
+  }
+
+]
