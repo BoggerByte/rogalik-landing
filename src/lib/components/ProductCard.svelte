@@ -52,7 +52,7 @@
         {#if imageUrl === "blank"}
             <div class="h-[300px]"></div>
         {:else}
-            <img src={imageUrl} alt={name} class="block w-full rounded object-cover max-h-[300px]">
+            <img src={imageUrl} alt={name} class="block w-full rounded object-cover h-[300px]">
         {/if}
         <div class="mt-6">{description}</div>
     </Card.Content>

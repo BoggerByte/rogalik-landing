@@ -33,16 +33,6 @@
                 <li><a href="https://x.com" target="_blank"><Twitter size="1.5em" /></a></li>
             </ul>
         </nav>
-        <nav class="ml-auto">
-            <header class="footer-header">Newsletter</header>
-            <form>
-                <Label for="email">Enter your email address</Label>
-                <div class="flex w-full max-w-sm items-center space-x-2">
-                    <Input id="email" type="email" placeholder="example@mail.com" />
-                    <Button type="submit">Subscribe</Button>
-                </div>
-            </form>
-        </nav>
     </div>
 </div>
 

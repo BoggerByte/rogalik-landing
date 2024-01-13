@@ -25,7 +25,7 @@
 
 <Separator class="relative -z-20 my-10"/>
 
-<section class="grid gap-x-10 gap-y-[4em]" style="grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr))">
+<section class="grid gap-x-10 gap-y-[4em]" style="grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr))">
     <div class="grid grid-rows-subgrid gap-2 row-span-2 mt-2 relative">
         <div class="absolute w-full -top-[1em] text-6xl text-center -z-10">🤌</div>
         <h3 class="text-3xl font-fatface">
@@ -62,7 +62,7 @@
 </section>
 
 <section class="mt-10">
-    <h2 class="font-fatface text-3xl text-center mb-2">Also we're cooking out stuff in the middle of the nowhere</h2>
+    <h2 class="font-fatface text-3xl text-center mb-2">Also we're cooking our stuff in the middle of the nowhere</h2>
     <p class="text-center">And we're kinda dead serious about that 💀💀💀</p>
     <Location class="mt-5 w-full h-[400px] rounded-md"/>
 </section>
@@ -90,7 +90,7 @@
                 <ArrowRight/>
             </Button>
             <p class="text-xl text-center">We have a lot of interesting products there</p>
-            <ul class="flex flex-row justify-center gap-10">
+            <ul class="flex flex-wrap justify-center gap-x-10">
                 <li>Bread</li>
                 <li>Pastries</li>
                 <li>Cakes</li>
