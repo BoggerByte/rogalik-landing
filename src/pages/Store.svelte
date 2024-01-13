@@ -13,9 +13,9 @@ let search = ""
 $: filteredBreads = breads.filter(b => b.name.includes(search) || b.description.includes(search))
 </script>
 
-<h2 class="font-fatface text-4xl text-center mb-6">Store</h2>
+<h2 class="font-fatface text-4xl text-center mb-6">Our selection of only the finest baked goods.</h2>
 
-<form class="mx-auto flex max-w-xl space-x-2 mb-6">
+<form class="mx-auto flex max-w-xl gap-1.5 mb-6">
     <Input class="max-w-xl" placeholder="Just type something here... (Cookies, Cakes, etc.)" bind:value={search} />
     <Button variant="ghost" size="icon" disabled={search.length === 0} on:click={() => search = ""}><X /></Button>
 </form>
@@ -24,7 +24,7 @@ $: filteredBreads = breads.filter(b => b.name.includes(search) || b.description.
     {#each filteredBreads as bread}
         <ProductCard {...bread} class="grid grid-rows-subgrid gap-0 row-span-3" />
     {:else}
-        <div class="text-center text-2xl col-span-full">Nothing was found</div>
+        <div class="text-center text-xl col-span-full text-muted-foreground">Nothing was found</div>
     {/each}
 </section>
 
@@ -52,9 +52,7 @@ $: filteredBreads = breads.filter(b => b.name.includes(search) || b.description.
                     <AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
                     <AlertDialog.Action
                             on:click={() => toast.success('You have subscribed to our newsletter')}
-                    >
-                        Yes
-                    </AlertDialog.Action>
+                    >Yes</AlertDialog.Action>
                 </AlertDialog.Footer>
             </AlertDialog.Content>
         </AlertDialog.Root>
