@@ -5,6 +5,7 @@
   import Store from "@/pages/Store.svelte"
   import NewOrder from "@/pages/NewOrder.svelte"
   import About from "@/pages/About.svelte"
+  import Discount from "@/pages/Discount.svelte";
   import NavBar from "@/lib/components/NavBar.svelte"
   import Footer from "@/lib/components/Footer.svelte"
   import {Toaster} from "@ui/sonner"
@@ -13,7 +14,8 @@
       '/': Home,
       '/store': Store,
       '/new-order': NewOrder,
-      '/about': About
+      '/about': About,
+      '/discount': Discount
   }
 </script>
 
