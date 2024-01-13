@@ -1,59 +1,93 @@
-<script>
-    import { fade } from "svelte/transition";
-    import {Button} from "@ui/button";
-    import {Badge} from "@ui/badge";
-    import {ChevronLeft, ChevronRight} from "lucide-svelte";
+<script lang="ts">
+	import emblaCarouselSvelte from "embla-carousel-svelte";
+	import { setEmblaContex, type CarouselProps, type CarouselAPI } from "./context.js";
+	import { cn } from "$lib/utils.js";
+	import { writable } from "svelte/store";
+	import { onDestroy } from "svelte";
 
-    export let images = [];
-    export let current = 0;
+	type $$Props = CarouselProps;
 
-    const nextImage = () => {
-        current = (current + 1) % images.length;
-    };
+	export let opts = {};
+	export let plugins: NonNullable<$$Props["plugins"]> = [];
+	export let api: $$Props["api"] = undefined;
+	export let orientation: NonNullable<$$Props["orientation"]> = "horizontal";
 
-    const prevImage = () => {
-        if (current !== 0) {
-            current = (current - 1) % images.length;
-        } else {
-            current = images.length - 1;
-        }
-    };
+	let className: $$Props["class"] = undefined;
+	export { className as class };
+
+	const apiStore = writable<CarouselAPI | undefined>(undefined);
+	const orientationStore = writable(orientation);
+	const canScrollPrev = writable(false);
+	const canScrollNext = writable(false);
+
+	$: orientationStore.set(orientation);
+
+	function scrollPrev() {
+		api?.scrollPrev();
+	}
+	function scrollNext() {
+		api?.scrollNext();
+	}
+
+	function onSelect(api: CarouselAPI) {
+		if (!api) return;
+		canScrollPrev.set(api.canScrollPrev());
+		canScrollNext.set(api.canScrollNext());
+	}
+
+	$: if (api) {
+		onSelect(api);
+		api.on("select", onSelect);
+		api.on("reInit", onSelect);
+	}
+
+	function handleKeyDown(e: KeyboardEvent) {
+		if (e.key === "ArrowLeft") {
+			e.preventDefault();
+			scrollPrev();
+		} else if (e.key === "ArrowRight") {
+			e.preventDefault();
+			scrollNext();
+		}
+	}
+
+	setEmblaContex({
+		api: apiStore,
+		scrollPrev,
+		scrollNext,
+		orientation: orientationStore,
+		canScrollNext,
+		canScrollPrev,
+		handleKeyDown
+	});
+
+	function onInit(event: CustomEvent<CarouselAPI>) {
+		api = event.detail;
+		apiStore.set(api);
+	}
+
+	onDestroy(() => {
+		api?.off("select", onSelect);
+	});
 </script>
 
-<div class="relative {$$props.class}">
-    <div class="absolute w-full h-full px-2 flex items-center justify-between">
-        <Button variant="outline" size="icon" on:click={prevImage}><ChevronLeft /></Button>
-        <Button variant="outline" size="icon" on:click={nextImage}><ChevronRight /></Button>
-    </div>
-    <div class="images min-h-0 max-h-full rounded-md bg-secondary">
-        {#each images as image, idx}
-            {#if current === idx}
-                <img
-                    class="image"
-                    transition:fade
-                    src={image}
-                    alt="carousel"
-                />
-            {/if}
-        {/each}
-    </div>
-    <div class="absolute bottom-1 w-full flex justify-center">
-        <Badge>{current + 1} / {images.length}</Badge>
-    </div>
+<div
+	class={cn("relative", className)}
+	use:emblaCarouselSvelte={{
+		options: {
+			container: "[data-embla-container]",
+			slides: "[data-embla-slide]",
+			...opts,
+			axis: $orientationStore === "horizontal" ? "x" : "y"
+		},
+		plugins
+	}}
+	on:emblaInit={onInit}
+	on:mouseenter
+	on:mouseleave
+	role="region"
+	aria-roledescription="carousel"
+	{...$$restProps}
+>
+	<slot />
 </div>
-
-<style lang="postcss">
-    .images {
-        display: grid;
-        grid-template-areas: "pile";
-        justify-content: center;
-        align-items: stretch;
-        overflow: clip;
-    }
-
-    .images > .image {
-        object-fit: cover;
-        display: block;
-        grid-area: pile;
-    }
-</style>
