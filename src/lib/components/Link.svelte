@@ -11,7 +11,7 @@
 <Button
         variant="link"
         href="#{to}"
-        class="hover:no-underline hover:opacity-100 {!plain && !active ? 'opacity-60' : ''} {$$props.class}"
+        class="hover:no-underline hover:text-primary {!plain && !active ? 'text-muted-foreground' : ''} {$$props.class}"
 >
     <slot {active} />
 </Button>

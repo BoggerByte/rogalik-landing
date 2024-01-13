@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Village Bread",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/le-village.jpg.webp",
+    "description": "The bread of the village chambelland is the natural recipe of our range. It is made of wholemeal rice and sorghum flours, filtered water, natural rice leaven, olive oil and salt. It is the perfect balance between a strong crust and a soft crumb with delicate aromas. To be mixed or spread as you"
+  },
+  {
+    "name": "5-grain bread",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/cinq-grains.jpg.webp",
+    "description": "Chambelland's best-selling 5-grain bread combines our signature recipe and a crust topped with sesame, sunflower, poppy and brown and toasted flax seeds. On top of its excellent nutritional qualities, this bread brings a little touch of fantasy to the table."
+  },
+  {
+    "name": "athletes' bread",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/athlete.jpg.webp",
+    "description": "chambelland Athletes' Bread contains hazelnuts, dried figs, dried apricots and raisins. A winning combination for a tasty, filling snack or to accompany a sweet and savoury dish. Perfect with a little, very soft and mild goat's cheese."
+  },
+  {
+    "name": "chambellines",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/chambellines.jpg.webp",
+    "description": "Chambellines are the small-sized version of the village bread, either plain or with a five-grain topping. Their slim format makes them easy to take away and eat anywhere, anytime, with coffee, a savoury dish or cheese. They are also the ideal option for a home-made sandwich."
+  },
+  {
+    "name": "Foccacia",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/foccacia.jpg.webp",
+    "description": "chambelland foccacia, with a rice flour base, come in plain, poppy seed, sesame seed, garnished with Kalamata black olives or pissaladièrestyle, and are every bit as good as their Italian equivalent. Light, melt-in-the-mouth and crunchy if toasted, they are perfect with pre-dinner drinks or as a hearty savoury starter."
+  },
+  {
+    "name": "Sugar breads",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/pains-de-sucre.jpg.webp",
+    "description": "Chambelland sugar breads, flavoured with orange-flower water, with or without preserved orange peel and chocolate chips, or alternatively with raisins and vanilla, are our idea of a delicious treat. Kneaded with rice flour, their taste is a mixture of warm brioche, canneléand bread pudding. Irresistible."
+  },
+  {
+    "name": "Cocoa bread",
+    "imageUrl": "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/pain-cacao.jpg.webp",
+    "description": "Cocoa bread is a subtle combination of rice, buckwheat and a slightly bitter chocolate. The cocoa taste is pleasant without being strong, giving the bread the comforting character of cake. A perfect wake-up breakfast or energy-packed snack."
+  }
+]

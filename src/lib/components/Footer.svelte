@@ -6,13 +6,14 @@
     import Logo from "$lib/components/Logo.svelte";
 </script>
 
-<div class="h-[160px] py-6 border-t-[1px] border-t-slate-200">
+<div class="h-[160px] py-6 border-t">
     <div class="container mx-auto flex gap-8 text-sm ">
         <aside>
             <Logo class="text-[1.6em]" />
             <p>
                 Providing reliable bread<br>
-                © 2012 Rogalik Bakery
+                © 2012 Rogalik Bakery<br>
+                +7 (777) 777-77-77
             </p>
         </aside>
         <nav>

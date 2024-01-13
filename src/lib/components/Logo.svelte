@@ -3,4 +3,4 @@
     export let color = undefined
 </script>
 
-<span class="font-fatface text-3xl {$$props.class}">Rogalik</span>
+<span class="font-fatface text-3xl text-foreground {$$props.class}">Rogalik</span>

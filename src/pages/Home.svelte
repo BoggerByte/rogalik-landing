@@ -1,44 +1,34 @@
 <script>
-import {Button} from "@ui/button"
-import {Separator} from "@ui/separator"
-import * as Card from "@ui/card"
-import {ArrowRight, Plus} from "lucide-svelte"
-import {push} from "svelte-spa-router"
+    import {ArrowRight} from "lucide-svelte"
+    import {push} from "svelte-spa-router"
+    import {Button} from "@ui/button"
+    import {Separator} from "@ui/separator"
+    import {Carousel} from "@ui/carousel";
+    import ProductCard from "@/lib/components/ProductCard.svelte"
+    import Location from "@/lib/components/Location.svelte";
+    import breads from "@/assets/breads.json"
+    import breadsImages from "@/assets/breads-images.json"
 
-const breads = [
-    {
-        name: "Village Bread",
-        imageUrl: "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/le-village.jpg.webp",
-        description: "The bread of the village chambelland is the natural recipe of our range. \n" +
-            "It is made of wholemeal rice and sorghum flours, filtered water, natural rice leaven, olive oil and salt.\n" +
-            "It is the perfect balance between a strong crust and a soft crumb with delicate aromas. \n" +
-            "To be mixed or spread as you",
-    },
-    {
-        name: "5-grain bread",
-        imageUrl: "https://www.chambelland.com/wp-content/webp-express/webp-images/uploads/2019/11/cinq-grains.jpg.webp",
-        description: "Chambelland's best-selling 5-grain bread combines our signature recipe and a crust topped with sesame, sunflower, poppy and brown and toasted flax seeds.\n" +
-            "On top of its excellent nutritional qualities, this bread brings a little touch of fantasy to the table."
-    }
-]
+    const viewableBreads = breads.slice(0, 6)
 </script>
 
-<section class="min-h-[55vh] flex items-center content-center">
-    <div class="max-w-7xl p-4">
+<section class="min-h-[55vh] max-w-7xl flex items-center justify-center text-center md:justify-start md:text-left">
+    <div class="p-4">
         <h1 class="text-5xl font-fatface leading-tight">Delectable snacks <br> by Proficient Workers</h1>
-        <p class="text-2xl text-muted-foreground mb-3">Don't believe us? Go try it for yourself</p>
-        <Button size="lg" on:click={() => push('/products')}>
-            <span class="font-bold mr-2">View Range</span>
-            <ArrowRight />
+        <p class="text-2xl text-muted-foreground mb-3">Don't believe us? Close the website</p>
+        <Button size="lg" on:click={() => push('/store')}>
+            <span class="font-bold mr-2">View Our Range</span>
+            <ArrowRight/>
         </Button>
     </div>
 </section>
 
-<Separator class="my-10" />
+<Separator class="relative -z-20 my-10"/>
 
-<section class="flex gap-16">
-    <div>
-        <h3 class="text-3xl font-fatface mb-4">
+<section class="grid gap-x-10 gap-y-[4em]" style="grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr))">
+    <div class="grid grid-rows-subgrid gap-2 row-span-2 mt-2 relative">
+        <div class="absolute w-full -top-[1em] text-6xl text-center -z-10">🤌</div>
+        <h3 class="text-3xl font-fatface">
             Convenience at Your Fingertips
         </h3>
         <p>
@@ -47,8 +37,9 @@ const breads = [
             With just a few clicks, you can satisfy your cravings effortlessly.
         </p>
     </div>
-    <div>
-        <h3 class="text-3xl font-fatface mb-4">
+    <div class="grid grid-rows-subgrid gap-2 row-span-2 mt-2 relative">
+        <div class="absolute w-full -top-[1em] text-6xl text-center -z-10">🍪</div>
+        <h3 class="text-3xl font-fatface">
             Delicious Variety, Your Way
         </h3>
         <p>
@@ -57,8 +48,9 @@ const breads = [
             whether it's choosing flavors, toppings, or crafting a personalized cake for that special occasion.
         </p>
     </div>
-    <div>
-        <h3 class="text-3xl font-fatface mb-4">
+    <div class="grid grid-rows-subgrid gap-2 row-span-2 mt-2 relative">
+        <div class="absolute w-full -top-[1em] text-6xl text-center -z-10">🌱</div>
+        <h3 class="text-3xl font-fatface">
             Guaranteed Freshness, Every Time
         </h3>
         <p>
@@ -69,24 +61,55 @@ const breads = [
     </div>
 </section>
 
-<Separator class="my-10" />
+<section class="mt-10">
+    <h2 class="font-fatface text-3xl text-center mb-2">Also we're cooking out stuff in the middle of the nowhere</h2>
+    <p class="text-center">And we're kinda dead serious about that 💀💀💀</p>
+    <Location class="mt-5 w-full h-[400px] rounded-md"/>
+</section>
+
+<Separator class="my-10"/>
+
+<section>
+
+    <!--    <Carousel images={breadsImages} class="max-h-[400px] w-full" />-->
+</section>
+
+<Separator class="my-10"/>
 
 <section>
     <h2 class="font-fatface text-5xl text-center mb-8">Let's see what we have...</h2>
-    <div class="grid grid-cols-4 gap-8">
-        {#each breads as bread}
-            <Card.Root>
-                <Card.Header>
-                    <Card.Title>{bread.name}</Card.Title>
-                </Card.Header>
-                <Card.Content>
-                    <img src={bread.imageUrl} alt={bread.name} class="block w-full rounded">
-                    <div class="mt-6">{bread.description}</div>
-                </Card.Content>
-                <Card.Footer class="flex">
-                    <Button class="ml-auto" size="icon"><Plus /></Button>
-                </Card.Footer>
-            </Card.Root>
-        {/each}
+    <div class="relative">
+        <div class="grid gap-10" style="grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr))">
+            {#each viewableBreads as bread}
+                <ProductCard {...bread} class="grid grid-rows-subgrid gap-0 row-span-3"/>
+            {/each}
+        </div>
+        <div class="overlay">
+            <Button size="lg" class="flex mx-auto" on:click={() => push('/store')}>
+                <span class="font-bold mr-2">View full Range at the Store</span>
+                <ArrowRight/>
+            </Button>
+            <p class="text-xl text-center">We have a lot of interesting products there</p>
+            <ul class="flex flex-row justify-center gap-10">
+                <li>Bread</li>
+                <li>Pastries</li>
+                <li>Cakes</li>
+                <li>Cookies</li>
+                <li>Pies</li>
+            </ul>
+        </div>
     </div>
 </section>
+
+<style lang="postcss">
+    .overlay {
+        position: absolute;
+        width: 105%;
+        left: 50%;
+        bottom: -10px;
+        translate: -50%;
+        padding-top: 500px;
+        padding-bottom: 100px;
+        background: linear-gradient(to top, theme('colors.background') 30%, transparent 100%);
+    }
+</style>
