@@ -19,7 +19,7 @@
   }
 </script>
 
-<div class="relative overflow-hidden">
+<div class="relative">
   <header class="absolute w-full">
     <NavBar />
   </header>
