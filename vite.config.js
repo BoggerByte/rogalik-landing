@@ -18,5 +18,6 @@ export default defineConfig({
       $lib: fileURLToPath(new URL("./src/lib", import.meta.url)),
       "@ui": fileURLToPath(new URL("./src/lib/components/ui", import.meta.url))
     }
-  }
+  },
+  base: '/RogalikLanding/'
 })
