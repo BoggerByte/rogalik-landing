@@ -31,7 +31,7 @@
     --destructive: 0 72.2% 50.6%;
     --destructive-foreground: 210 40% 98%;
  
-    --ring: 222.2 84% 4.9%;
+    --ring: transparent;
  
     --radius: 0.5rem;
   }
@@ -39,7 +39,6 @@
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
  
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -65,7 +64,7 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
  
-    --ring: hsl(212.7deg 26.8% 83.9%);
+    --ring: transparent;
   }
 }
  
@@ -78,18 +77,82 @@
   }
 }
 
+/*
+  Removing numbers input controls
+*/
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
 }
 
-*:focus {
-  outline: none;
+.header {
+  margin-block: 0.3em;
+
+  @apply leading-normal;
+  @apply font-normal;
+  @apply font-heading;
+
+  h1& {
+    @apply text-6xl;
+  }
+  h2& {
+    @apply text-5xl;
+  }
+  h3& {
+    @apply text-4xl;
+  }
+  h4& {
+    @apply text-3xl;
+  }
+  h5& {
+    @apply text-2xl;
+  }
+  h6& {
+    @apply text-xl;
+  }
+}
+
+p.subheader {
+  margin-block: 0.25em;
+
+  @apply text-muted-foreground;
+  @apply text-lg;
+  @apply font-normal;
+  @apply leading-normal;
+}
+
+p.paragraph {
+  margin-block: 0.25em;
+
+  @apply font-normal;
+  @apply leading-normal;
+}
+
+img.image {
+  display: block;
+  object-fit: cover;
+
+  @apply rounded-md;
+}
+
+.flip-x {
+  transform: scaleX(-1);
+}
+
+.flip-y {
+  transform: scaleY(-1);
+}
+
+.input {
+  @apply grid w-full max-w-sm items-center gap-1.5;
+}
+
+.input-row {
+  @apply flex items-center space-x-2;
 }

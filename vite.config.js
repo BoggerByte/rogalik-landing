@@ -15,8 +15,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
-      $lib: fileURLToPath(new URL("./src/lib", import.meta.url)),
-      "@ui": fileURLToPath(new URL("./src/lib/components/ui", import.meta.url))
+      "@ui": fileURLToPath(new URL("./src/lib/components/ui", import.meta.url)),
+      $lib: fileURLToPath(new URL("./src/lib", import.meta.url))
     }
   },
   base: '/RogalikLanding/'
