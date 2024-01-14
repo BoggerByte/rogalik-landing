@@ -1,6 +1,7 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { cubicOut } from "svelte/easing";
+import { Readable, readable } from "svelte/store"
 import type { TransitionConfig } from "svelte/transition";
 
 export function cn(...inputs: ClassValue[]) {
@@ -60,3 +61,16 @@ export const flyAndScale = (
         easing: cubicOut
     };
 };
+
+
+export function useMediaQuery(mediaQueryString: string): Readable<boolean> {
+    return readable(null, (set) => {
+        if (typeof globalThis["window"] === "undefined") return
+
+        const match = window.matchMedia(mediaQueryString)
+        set(match.matches)
+        const element = (event: MediaQueryListEvent) => set(event.matches)
+        match.addEventListener("change", element)
+        return () => match.removeEventListener("change", element)
+    })
+}
