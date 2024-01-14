@@ -1,4 +1,5 @@
 {
+  "ignorePatterns": ["**/ui/**/*.*"],
   "extends": [
     "eslint:recommended",
     "plugin:svelte/recommended",

@@ -23,7 +23,7 @@
     <Button
       variant="outline"
       class="{cn(
-        'w-[240px] justify-start text-left font-normal',
+        'justify-start text-left font-normal',
         !value && 'text-muted-foreground'
       )}"
       builders="{[builder]}"

@@ -4,8 +4,8 @@
 </script>
 
 <div class="h-[160px] border-t py-6">
-  <div class="container mx-auto flex flex-wrap gap-8 text-sm">
-    <aside class="shrink-0">
+  <div class="footer container mx-auto">
+    <aside class="footer-container">
       <Logo class="text-[1.6em]" />
       <p>
         Providing reliable bread<br />
@@ -13,7 +13,7 @@
         +7 (777) 777-77-77
       </p>
     </aside>
-    <nav class="shrink-0">
+    <nav class="footer-container">
       <header class="footer-header">Company</header>
       <ul>
         <li><a href="{'#'}">Franchise</a></li>
@@ -22,7 +22,7 @@
         <li><a href="{'#'}">Employment</a></li>
       </ul>
     </nav>
-    <nav class="shrink-0">
+    <nav class="footer-container">
       <header class="footer-header">Social</header>
       <ul class="flex flex-wrap gap-4">
         <li>
@@ -36,7 +36,7 @@
         </li>
       </ul>
     </nav>
-    <nav class="shrink-0 lg:ml-auto">
+    <nav class="footer-container lg:ml-auto">
       <header class="footer-header">Credits</header>
       <ul>
         <li>
@@ -57,7 +57,7 @@
         </li>
       </ul>
     </nav>
-    <nav class="shrink-0 pb-6">
+    <nav class="footer-container">
       <header class="footer-header">Source Code</header>
       <a
         href="https://github.com/BoggerByte/RogalikLanding"
@@ -72,11 +72,22 @@
 </div>
 
 <style lang="postcss">
-  .footer-header {
-    margin-bottom: 0.5rem;
-    color: theme("textColor.secondary.foreground");
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    @apply gap-x-8 text-sm;
 
-    font-weight: bold;
-    text-transform: uppercase;
+    &-container {
+      flex-shrink: 0;
+      @apply pb-6;
+    }
+
+    &-header {
+      margin-bottom: 0.5em;
+      color: theme("textColor.secondary.foreground");
+
+      font-weight: bold;
+      text-transform: uppercase;
+    }
   }
 </style>

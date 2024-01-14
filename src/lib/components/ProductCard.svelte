@@ -1,9 +1,9 @@
 <script>
   import { fade } from "svelte/transition"
   import { toast } from "svelte-sonner"
+  import { Plus, Minus } from "lucide-svelte"
   import { Button } from "@ui/button"
   import * as Card from "@ui/card"
-  import { Plus, Minus } from "lucide-svelte"
   import { Input } from "@ui/input"
 
   export let name
@@ -46,34 +46,26 @@
 
 <Card.Root class="{$$props.class}">
   <Card.Header>
-    <Card.Title>{name}</Card.Title>
+    <Card.Title class="font-normal">{name}</Card.Title>
   </Card.Header>
   <Card.Content>
-    {#if imageUrl === "blank"}
-      <div class="h-[300px]"></div>
-    {:else}
-      <img
-        src="{imageUrl}"
-        alt="{name}"
-        class="block h-[300px] w-full rounded object-cover"
-      />
-    {/if}
+    <img src="{imageUrl}" alt="{name}" class="image" />
     <div class="mt-6">{description}</div>
   </Card.Content>
-  <Card.Footer class="flex">
-    <div class="ml-auto flex justify-end gap-2">
+  <Card.Footer class="ml-auto flex">
+    <div class="flex space-x-2">
       {#if quantity > 0}
-        <span transition:fade>
+        <div transition:fade>
           <Button class="w-10" size="icon" on:click="{removeOne}"><Minus /></Button>
-        </span>
-        <span transition:fade>
+        </div>
+        <div transition:fade>
           <Input
             type="number"
             class="w-20"
             value="{quantity}"
             on:change="{handleChange}"
           />
-        </span>
+        </div>
       {/if}
       <Button size="icon" class="w-10" on:click="{addOne}"><Plus /></Button>
     </div>

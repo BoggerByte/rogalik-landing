@@ -1,21 +1,19 @@
 <script>
-  import { mode, toggleMode } from "mode-watcher"
-  import { Github, Menu, Moon, Sun } from "lucide-svelte"
+  import { Github, Menu } from "lucide-svelte"
   import { slide } from "svelte/transition"
   import { Button } from "@ui/button"
   import { Badge } from "@ui/badge"
-  import useMediaQuery from "@/lib/components/useMediaQuery"
+  import { useMediaQuery } from "@/lib/utils"
   import Logo from "@/lib/components/Logo.svelte"
   import Link from "@/lib/components/Link.svelte"
+  import ThemeToggler from "@/lib/components/ThemeToggler.svelte"
 
   $: mobileMode = useMediaQuery("(max-width: 1023px)")
 
   let menuOpen = false
 </script>
 
-<div
-  class="fixed z-20 min-h-[50px] w-full border-b bg-primary-foreground bg-opacity-75 px-4 backdrop-blur-md xl:px-8"
->
+<div class="navbar">
   <div class="flex">
     {#if $mobileMode}
       <Button
@@ -27,7 +25,7 @@
         <Menu />
       </Button>
     {/if}
-    <div class="my-auto lg:ml-3 mr-6">
+    <div class="my-auto mr-6 lg:ml-3">
       <Link to="/" plain>
         <Logo />
       </Link>
@@ -39,12 +37,7 @@
         <Link to="/store">Store</Link>
         <Link to="/discount" class="space-x-2">
           <span>Discount</span>
-          <Badge
-            variant="outline"
-            class="border-red-400 bg-red-400 bg-opacity-15 text-red-400"
-          >
-            new
-          </Badge>
+          <Badge variant="outline-destructive">new</Badge>
         </Link>
         <Link to="/about">About</Link>
       </div>
@@ -57,24 +50,8 @@
         target="_blank"
       >
         <Github />
-      </Button
-      >
-      <Button
-        variant="ghost"
-        size="icon"
-        on:click="{toggleMode}"
-        class="relative flex-none"
-      >
-        {#if $mode === "light"}
-          <span transition:slide="{{ duration: 300 }}" class="absolute">
-            <Sun />
-          </span>
-        {:else}
-          <span transition:slide="{{ duration: 300 }}" class="absolute">
-            <Moon />
-          </span>
-        {/if}
       </Button>
+      <ThemeToggler />
     </div>
   </div>
 
@@ -86,12 +63,20 @@
       <Link to="/new-order" on:click="{() => (menuOpen = false)}">New Order</Link>
       <Link to="/discount" on:click="{() => (menuOpen = false)}" class="space-x-2">
         <span>Discount</span>
-        <Badge
-          variant="outline"
-          class="border-red-400 bg-red-400 bg-opacity-15 text-red-400">new
-        </Badge
-        >
+        <Badge variant="outline-destructive">new</Badge>
       </Link>
     </div>
   {/if}
 </div>
+
+<style lang="postcss">
+  .navbar {
+    position: fixed;
+    min-height: 50px;
+    width: 100%;
+
+    @apply z-20 border-b bg-primary-foreground
+            bg-opacity-75 px-4 backdrop-blur-md
+            xl:px-8;
+  }
+</style>

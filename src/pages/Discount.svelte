@@ -4,7 +4,6 @@
   import { Button } from "@ui/button"
   import * as RadioGroup from "@ui/radio-group"
   import challenges from "@/content/quiz"
-  import { Badge } from "@ui/badge"
 
   let state = "menu"
   let currentChallenge = 0
@@ -24,53 +23,47 @@
 
 <section class="mx-auto max-w-xl">
   {#if state === "menu"}
-    <h1 class="text-center font-fatface text-3xl">
-      Complete the Quiz and Get a Free Discount!
-    </h1>
-    <p class="mb-5 text-center text-xl">
-      Try our {challenges.length} questions challenge
+    <h2 class="header text-center">Complete the Quiz and Get a Free Discount</h2>
+    <p class="subheader text-center">
+      Try our {challenges.length} questions challenge!
     </p>
-    <div class="flex justify-center">
-      <Button on:click="{() => (state = 'game')}">I'll accept the challenge!</Button>
+    <div class="mt-5 flex justify-center">
+      <Button size="lg" on:click="{() => (state = 'game')}"
+        >I'll accept the challenge!</Button
+      >
     </div>
   {/if}
 
   {#if state === "game"}
-    <Progress value="{currentChallenge}" max="{challenges.length}" />
-    <div class="mt-4">
-      {#each challenges as challenge, idx}
-        {#if idx === currentChallenge}
-          <div class="mb-3">
-            <h3 class="font-fatface text-xl">
-              Question {currentChallenge + 1}
-            </h3>
-            <p>{challenge.question}</p>
-            <RadioGroup.Root bind:value="{answers[idx]}" class="mb-5 mt-4">
-              {#each challenge.choices as choice}
-                <div class="flex items-center space-x-2">
-                  <RadioGroup.Item value="{choice.value.toString()}" />
-                  <Label>{choice.label}</Label>
-                </div>
-              {/each}
-            </RadioGroup.Root>
-          </div>
-          <div>
-            <Button
-              disabled="{!answers[idx]}"
-              on:click="{handleAnswer}"
-              class="w-full sm:w-auto"
-            >
-              {lastChallenge ? "Submit" : "Next Question"}
-            </Button>
-          </div>
-        {/if}
-      {/each}
-    </div>
+    <Progress value="{currentChallenge}" max="{challenges.length}" class="mb-5" />
+    {#each challenges as challenge, idx}
+      {#if idx === currentChallenge}
+        <h5 class="header">Question {currentChallenge + 1}</h5>
+        <p class="paragraph">{challenge.question}</p>
+        <RadioGroup.Root bind:value="{answers[idx]}" class="mb-5 mt-4">
+          {#each challenge.choices as choice}
+            <div class="flex items-center space-x-2">
+              <RadioGroup.Item value="{choice.value.toString()}" />
+              <Label>{choice.label}</Label>
+            </div>
+          {/each}
+        </RadioGroup.Root>
+        <div>
+          <Button
+            disabled="{!answers[idx]}"
+            on:click="{handleAnswer}"
+            class="w-full sm:w-auto"
+          >
+            {lastChallenge ? "Submit" : "Next Question"}
+          </Button>
+        </div>
+      {/if}
+    {/each}
   {/if}
 
   {#if state === "results"}
-    <h1 class="text-center font-fatface text-3xl">Results</h1>
-    <p class="mb-5 text-center text-xl">
+    <h3 class="header text-center">Results</h3>
+    <p class="subheader text-center">
       {#if hasDiscount}
         Congrats! You've deserved a discount!
       {:else}

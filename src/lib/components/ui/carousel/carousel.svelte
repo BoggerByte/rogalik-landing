@@ -72,7 +72,7 @@
 </script>
 
 <div
-  class="{cn('relative', className)}"
+  class="{cn('relative mx-16', className)}"
   use:emblaCarouselSvelte="{{
     options: {
       container: '[data-embla-container]',

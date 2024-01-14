@@ -56,7 +56,7 @@ const config = {
 			},
 			fontFamily: {
 				sans: [...fontFamily.sans],
-				fatface: ['Abril Fatface', 'sans-serif']
+				heading: ['Abril Fatface', 'sans-serif']
 			}
 		}
 	},
