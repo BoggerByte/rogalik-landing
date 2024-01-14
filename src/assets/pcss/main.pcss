@@ -31,7 +31,7 @@
     --destructive: 0 72.2% 50.6%;
     --destructive-foreground: 210 40% 98%;
  
-    --ring: 222.2 84% 4.9%;
+    --ring: transparent;
  
     --radius: 0.5rem;
   }
@@ -64,7 +64,7 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
  
-    --ring: hsl(212.7deg 26.8% 83.9%);
+    --ring: transparent;
   }
 }
  
@@ -75,20 +75,17 @@
   body {
     @apply bg-background text-foreground;
   }
-
-  *:focus {
-    @apply ring-0;
-  }
 }
 
-// TODO: remove nasty number controls
+/*
+  Removing numbers input controls
+*/
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;

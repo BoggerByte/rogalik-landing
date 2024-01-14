@@ -1,4 +1,4 @@
-import "./app.pcss"
+import "@/assets/pcss/main.pcss"
 import App from "./App.svelte"
 
 const app = new App({
