@@ -3,7 +3,7 @@
   import { Label } from "@ui/label"
   import { Button } from "@ui/button"
   import * as RadioGroup from "@ui/radio-group"
-  import challenges from "@/assets/quiz.json"
+  import challenges from "@/content/quiz"
   import { Badge } from "@ui/badge"
 
   let state = "menu"

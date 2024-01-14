@@ -6,11 +6,11 @@
   import * as Carousel from "@ui/carousel"
   import ProductCard from "@/lib/components/ProductCard.svelte"
   import Location from "@/lib/components/Location.svelte"
-  import breads from "@/assets/breads.json"
-  import breadsImages from "@/assets/breads-images.json"
+  import products from "@/content/products"
+  import carouselImageUrls from "@/content/carouselImageUrls.js"
   import Autoplay from "embla-carousel-autoplay"
 
-  const viewableBreads = breads.slice(0, 6)
+  const viewableBreads = products.slice(0, 6)
 </script>
 
 <section
@@ -44,7 +44,7 @@
       class="mx-10"
     >
       <Carousel.Content class="items-center">
-        {#each breadsImages as url, i}
+        {#each carouselImageUrls as url, i}
           <Carousel.Item>
             <img
               src="{url}"

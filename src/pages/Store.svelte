@@ -1,7 +1,7 @@
 <script>
   import { Search, X } from "lucide-svelte"
   import ProductCard from "@/lib/components/ProductCard.svelte"
-  import breads from "@/assets/breads.json"
+  import products from "@/content/products"
   import { Input } from "@ui/input"
   import { Button } from "@ui/button"
   import * as AlertDialog from "@ui/alert-dialog"
@@ -10,7 +10,7 @@
   let email = ""
   let search = ""
 
-  $: filteredBreads = breads.filter(
+  $: filteredBreads = products.filter(
     (b) => b.name.includes(search) || b.description.includes(search)
   )
 </script>
