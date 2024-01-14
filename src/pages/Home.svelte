@@ -137,6 +137,7 @@
         position: absolute;
         width: 100%;
         top: -1em;
+        text-align: center;
         @apply -z-10 text-6xl;
       }
     }
