@@ -118,22 +118,24 @@
     commitment to quality and passion for baking that defined the original establishment.
   </p>
 
-  <Carousel.Root class="mx-auto w-full max-w-2xl">
-    <Carousel.Content class="items-center">
-      {#each locations as bakery}
-        <Carousel.Item class="items-center">
-          <div class="mb-2 text-center text-xl font-semibold">
-            {bakery.location}
-          </div>
-          <img
-            src="{bakery.imageUrl}"
-            alt="{bakery.name}"
-            class="block w-full rounded-md object-cover"
-          />
-        </Carousel.Item>
-      {/each}
-    </Carousel.Content>
-    <Carousel.Previous />
-    <Carousel.Next />
-  </Carousel.Root>
+  <div class="mx-auto w-full max-w-2xl">
+    <Carousel.Root class="mx-10">
+      <Carousel.Content class="items-center">
+        {#each locations as bakery}
+          <Carousel.Item class="items-center">
+            <div class="mb-2 text-center text-xl font-semibold">
+              {bakery.location}
+            </div>
+            <img
+              src="{bakery.imageUrl}"
+              alt="{bakery.name}"
+              class="block w-full rounded-md object-cover"
+            />
+          </Carousel.Item>
+        {/each}
+      </Carousel.Content>
+      <Carousel.Previous />
+      <Carousel.Next />
+    </Carousel.Root>
+  </div>
 </section>

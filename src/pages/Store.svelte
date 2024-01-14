@@ -1,17 +1,17 @@
 <script>
-  import { Search, X } from "lucide-svelte"
+  import { X } from "lucide-svelte"
+  import { toast } from "svelte-sonner"
   import ProductCard from "@/lib/components/ProductCard.svelte"
   import products from "@/content/products"
+  import * as AlertDialog from "@ui/alert-dialog"
   import { Input } from "@ui/input"
   import { Button } from "@ui/button"
-  import * as AlertDialog from "@ui/alert-dialog"
-  import { toast } from "svelte-sonner"
 
   let email = ""
   let search = ""
 
-  $: filteredBreads = products.filter(
-    (b) => b.name.includes(search) || b.description.includes(search)
+  $: filteredProducts = products.filter(
+    p => p.name.includes(search) || p.description.includes(search)
   )
 </script>
 
@@ -37,8 +37,8 @@
   class="grid gap-10"
   style="grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr))"
 >
-  {#each filteredBreads as bread}
-    <ProductCard {...bread} class="row-span-3 grid grid-rows-subgrid gap-0" />
+  {#each filteredProducts as product}
+    <ProductCard {...product} class="row-span-3 grid grid-rows-subgrid gap-0" />
   {:else}
     <div class="text-center text-xl col-span-full text-muted-foreground">
       Nothing was found

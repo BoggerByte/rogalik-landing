@@ -57,7 +57,7 @@
         </li>
       </ul>
     </nav>
-    <nav class="shrink-0">
+    <nav class="shrink-0 pb-6">
       <header class="footer-header">Source Code</header>
       <a
         href="https://github.com/BoggerByte/RogalikLanding"

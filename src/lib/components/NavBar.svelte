@@ -1,6 +1,6 @@
 <script>
   import { mode, toggleMode } from "mode-watcher"
-  import { Github, Menu, Moon, Sun, ShoppingCart } from "lucide-svelte"
+  import { Github, Menu, Moon, Sun } from "lucide-svelte"
   import { slide } from "svelte/transition"
   import { Button } from "@ui/button"
   import { Badge } from "@ui/badge"
@@ -8,7 +8,7 @@
   import Logo from "@/lib/components/Logo.svelte"
   import Link from "@/lib/components/Link.svelte"
 
-  $: mobileMode = useMediaQuery("(max-width: 820px)")
+  $: mobileMode = useMediaQuery("(max-width: 1023px)")
 
   let menuOpen = false
 </script>
@@ -17,8 +17,20 @@
   class="fixed z-20 min-h-[50px] w-full border-b bg-primary-foreground bg-opacity-75 px-4 backdrop-blur-md xl:px-8"
 >
   <div class="flex">
-    <div class="my-auto ml-3 mr-6">
-      <Link to="/" plain><Logo /></Link>
+    {#if $mobileMode}
+      <Button
+        variant="ghost"
+        size="icon"
+        class="my-auto"
+        on:click="{() => (menuOpen = !menuOpen)}"
+      >
+        <Menu />
+      </Button>
+    {/if}
+    <div class="my-auto lg:ml-3 mr-6">
+      <Link to="/" plain>
+        <Logo />
+      </Link>
     </div>
     {#if !$mobileMode}
       <div class="flex items-center gap-1 py-1">
@@ -29,19 +41,23 @@
           <span>Discount</span>
           <Badge
             variant="outline"
-            class="border-red-400 bg-red-400 bg-opacity-15 text-red-400">new</Badge
+            class="border-red-400 bg-red-400 bg-opacity-15 text-red-400"
           >
+            new
+          </Badge>
         </Link>
         <Link to="/about">About</Link>
       </div>
     {/if}
     <div class="ml-auto flex items-center gap-1 py-1">
-      <Button variant="ghost" size="icon" disabled><ShoppingCart /></Button>
       <Button
         variant="ghost"
         size="icon"
         href="https://github.com/BoggerByte/RogalikLanding"
-        target="_blank"><Github /></Button
+        target="_blank"
+      >
+        <Github />
+      </Button
       >
       <Button
         variant="ghost"
@@ -59,11 +75,6 @@
           </span>
         {/if}
       </Button>
-      {#if $mobileMode}
-        <Button size="icon" class="mx-2" on:click="{() => (menuOpen = !menuOpen)}"
-          ><Menu /></Button
-        >
-      {/if}
     </div>
   </div>
 
@@ -77,7 +88,8 @@
         <span>Discount</span>
         <Badge
           variant="outline"
-          class="border-red-400 bg-red-400 bg-opacity-15 text-red-400">new</Badge
+          class="border-red-400 bg-red-400 bg-opacity-15 text-red-400">new
+        </Badge
         >
       </Link>
     </div>

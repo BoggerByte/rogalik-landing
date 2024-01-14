@@ -7,7 +7,7 @@
   import ProductCard from "@/lib/components/ProductCard.svelte"
   import Location from "@/lib/components/Location.svelte"
   import products from "@/content/products"
-  import carouselImageUrls from "@/content/carouselImageUrls.js"
+  import carouselImageUrls from "@/content/carouselImageUrls"
   import Autoplay from "embla-carousel-autoplay"
 
   const viewableBreads = products.slice(0, 6)
@@ -65,7 +65,7 @@
 
 <section
   class="grid gap-x-10 gap-y-[4em]"
-  style="grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr))"
+  style="grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr))"
 >
   <div class="relative row-span-2 mt-2 grid grid-rows-subgrid gap-2">
     <div class="absolute -top-[1em] -z-10 w-full text-center text-6xl">🤌</div>
