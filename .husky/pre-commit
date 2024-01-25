@@ -1,1 +1,1 @@
-npm run format
+npx pretty-quick --staged
