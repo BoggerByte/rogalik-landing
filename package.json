@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "format": "prettier --write '{public,src}/**/*.{css,html,js,svelte}'",
-    "lint": "eslint --fix --quiet src --ext .js,.svelte",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "bunx --bun vite",
+    "build": "bunx --bun vite build",
+    "preview": "bunx --bun vite preview",
+    "format": "bunx --bun prettier --write '{public,src}/**/*.{css,html,js,svelte}'",
+    "lint": "bunx --bun eslint --fix --quiet src --ext .js,.svelte",
     "prepare": "husky"
   },
   "devDependencies": {
