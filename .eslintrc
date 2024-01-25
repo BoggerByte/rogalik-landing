@@ -1,12 +1,16 @@
 {
+  "root": true,
   "ignorePatterns": ["**/ui/**/*.*"],
   "extends": [
     "eslint:recommended",
     "plugin:svelte/recommended",
     "plugin:svelte/prettier"
   ],
-  "rules": {
-    // override/add rules settings here, such as:
-    // 'svelte/rule-name': 'error'
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
   }
 }
