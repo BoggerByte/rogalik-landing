@@ -1,7 +1,6 @@
 <script>
   import { ArrowRight } from "lucide-svelte"
   import Autoplay from "embla-carousel-autoplay"
-  import { push } from "svelte-spa-router"
   import { Button } from "@ui/button"
   import { Separator } from "@ui/separator"
   import * as Carousel from "@ui/carousel"
@@ -20,7 +19,7 @@
       by Proficient Workers
     </h1>
     <p class="subheader">Don't believe us? Close this website!</p>
-    <Button size="lg" on:click="{() => push('/store')}">
+    <Button size="lg" href="/store">
       <span class="mr-2 font-semibold">View Our Range</span>
       <ArrowRight />
     </Button>
@@ -93,7 +92,7 @@
       {/each}
     </div>
     <div class="fade">
-      <Button size="lg" class="mx-auto flex" on:click="{() => push('/store')}">
+      <Button size="lg" href="/store" class="mx-auto flex max-w-md">
         <span class="mr-2 font-semibold">View full Range at the Store</span>
         <ArrowRight />
       </Button>

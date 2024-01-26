@@ -1,17 +1,17 @@
 <script>
-  import { location } from "svelte-spa-router"
+  import { page } from "$app/stores"
   import { Button } from "@ui/button"
 
   export let to
   export let plain = false
 
-  $: active = $location === to
+  $: active = $page.path === to
 </script>
 
 <Button
   on:click
   variant="link"
-  href="#{to}"
+  href="{to}"
   class="hover:text-primary hover:no-underline {!plain && !active
     ? 'text-muted-foreground'
     : ''} {$$props.class}"

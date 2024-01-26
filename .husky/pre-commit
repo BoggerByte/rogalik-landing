@@ -1,1 +1,1 @@
-npx pretty-quick --staged
+bunx pretty-quick --staged
