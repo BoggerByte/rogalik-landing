@@ -2,41 +2,41 @@
   {
     "question": "In which year did our bakery establishment begin its delicious journey?",
     "choices": [
-      {"label": "1985", "value": 0},
-      {"label": "1998", "value": 1},
-      {"label": "2005", "value": 2},
-      {"label": "2012", "value": 3}
+      { "label": "1985", "value": 0 },
+      { "label": "1998", "value": 1 },
+      { "label": "2005", "value": 2 },
+      { "label": "2012", "value": 3 }
     ],
     "answer": 2
   },
   {
     "question": "Which pastry is known for its flaky layers and almond filling?",
     "choices": [
-      {"label": "Chocolate Cupcake", "value": 0},
-      {"label": "Almond Croissant", "value": 1},
-      {"label": "Fruit Danish", "value": 2},
-      {"label": "Oatmeal Raisin Cookie", "value": 3}
+      { "label": "Chocolate Cupcake", "value": 0 },
+      { "label": "Almond Croissant", "value": 1 },
+      { "label": "Fruit Danish", "value": 2 },
+      { "label": "Oatmeal Raisin Cookie", "value": 3 }
     ],
     "answer": 1
   },
   {
     "question": "What is the signature flavor of our best-selling cake?",
     "choices": [
-      {"label": "Vanilla", "value": 0},
-      {"label": "Red Velvet", "value": 1},
-      {"label": "Chocolate", "value": 2},
-      {"label": "Lemon", "value": 3},
-      {"label": "Carrot", "value": 4}
+      { "label": "Vanilla", "value": 0 },
+      { "label": "Red Velvet", "value": 1 },
+      { "label": "Chocolate", "value": 2 },
+      { "label": "Lemon", "value": 3 },
+      { "label": "Carrot", "value": 4 }
     ],
     "answer": 2
   },
   {
     "question": "On which day of the week do we offer a special discount on our bread loaves?",
     "choices": [
-      {"label": "Monday", "value": 0},
-      {"label": "Wednesday", "value": 1},
-      {"label": "Friday", "value": 2},
-      {"label": "Sunday", "value": 3}
+      { "label": "Monday", "value": 0 },
+      { "label": "Wednesday", "value": 1 },
+      { "label": "Friday", "value": 2 },
+      { "label": "Sunday", "value": 3 }
     ],
     "answer": 1
   }
