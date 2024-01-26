@@ -1,23 +1,9 @@
-import { fileURLToPath, URL } from "url"
-
 import { defineConfig } from "vite"
-import { svelte } from "@sveltejs/vite-plugin-svelte"
-import { webfontDownload } from "vite-plugin-webfont-dl"
+import { sveltekit } from "@sveltejs/kit/vite"
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  plugins: [
-    svelte(),
-    webfontDownload([
-      "https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
-    ])
-  ],
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-      "@ui": fileURLToPath(new URL("./src/lib/components/ui", import.meta.url)),
-      $lib: fileURLToPath(new URL("./src/lib", import.meta.url))
-    }
-  },
-  base: mode === "production" ? process.env.NODE_BASE_PATH : undefined
-}))
+export default defineConfig({
+  plugins: [sveltekit()]
+})
+
+// base: mode === "production" ? process.env.NODE_BASE_PATH : undefined

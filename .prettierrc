@@ -1,15 +1,16 @@
 {
-  "plugins": [
-    "prettier-plugin-svelte",
-    "prettier-plugin-tailwindcss"
-  ],
-  "overrides": [{
-    "files": "*.svelte",
-    "options": { "parser": "svelte" }
-  }],
+  "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
   "svelteStrictMode": true,
   "semi": false,
   "singleQuote": false,
   "trailingComma": "none",
-  "printWidth": 90
+  "printWidth": 90,
+  "overrides": [
+    {
+      "files": "*.svelte",
+      "options": {
+        "parser": "svelte"
+      }
+    }
+  ]
 }
